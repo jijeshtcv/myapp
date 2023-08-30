@@ -4,7 +4,7 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 app.get('/redirect', (req, res) => {
-  res.redirect('https://www.paypal.com');
+  res.redirect('https://www.paypal.com/myaccount/summary');
 });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
