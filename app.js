@@ -4,7 +4,9 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 app.get('/redirect', (req, res) => {
-  // res.redirect('https://www.paypal.com/package_list');
+  res.redirect('https://www.paypal.com/package_list');
+});
+app.get('/manual-redirect', (req, res) => {
   res.writeHead(200, { 'Content-type': 'text/html' })
   res.write('<htnl><body><a href="https://www.paypal.com/package_list">Open</a></body></html>')
 });
