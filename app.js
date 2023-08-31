@@ -1,10 +1,12 @@
 const express = require("express");
+const open = require('open')
 const app = express();
 const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
-app.get('/redirect', (req, res) => {
-  res.redirect('https://www.paypal.com/package_list');
+app.get('/redirect', async (req, res) => {
+  await open('https://www.paypal.com/package_list') // Opens the url in the default browser
+  // res.redirect('https://www.paypal.com/package_list');
 });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
