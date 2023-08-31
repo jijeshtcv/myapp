@@ -75,76 +75,46 @@ const popup = `
           content="width=device-width,
                    initial-scale=1.0">
     <style>
-        .box {
-            background-color: black;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        p {
-            font-size: 17px;
-            align-items: center;
-        }
-        .box a {
-            display: inline-block;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 3px;
-        }
-        .modal {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(254, 126, 126, 0.7);
-            transition: all 0.4s;
-            visibility: hidden;
-            opacity: 0;
-        }
-        .content {
-            position: absolute;
-            background: white;
-            width: 400px;
-            padding: 1em 2em;
-            border-radius: 4px;
-        }
-        .modal:target {
-            visibility: visible;
-            opacity: 1;
-        }
-        .box-close {
-            position: absolute;
-            top: 0;
-            right: 15px;
-            color: #fe0606;
-            text-decoration: none;
-            font-size: 30px;
-        }
+      /* The Modal (background) */
+      .modal {
+        /* display: none; */ /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: lightgrey; /* Black w/ opacity */
+
+      }
+      
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 20%; /* Could be more or less, depending on screen size */
+      }
     </style>
+    <script>
+      function cancel() {
+        window.location.href = "https://www.paypal.com/package_list";
+      }
+    </script>
 </head>
  
 <body>
-    <div class="box">
-        <a href="#popup-box">
-            Click to Open Popup Box !
-        </a>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <a class="link" href="https://www.paypal.com/package_list"/>Continue to PayPal app</a><br />
+      <a class="link" href="javascript: cancel()"/>Continue to web</a>
     </div>
-    <div id="popup-box" class="modal">
-        <div class="content">
-            <h1 style="color: green;">
-                Continue to PayPal app
-            </h1>
-            <a href="https://www.paypal.com/package_list"
-               class="box-close">
-                ×
-            </a>
-        </div>
-    </div>
+  </div>
 </body>
 </html>
 `
